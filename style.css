@@ -1,0 +1,69 @@
+body {
+  background-color: #373c45;
+}
+header {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.logo {
+  width: 130px;
+}
+.filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.filter__blue {
+  padding: 10px;
+  background-color: #54aeef;
+  display: flex;
+  justify-content: center;
+}
+.filter__yellow {
+  padding: 10px;
+  background-color: yellow;
+  display: flex;
+  justify-content: center;
+}
+.filter__pink {
+  padding: 10px;
+  background-color: pink;
+  display: flex;
+  justify-content: center;
+}
+.fi {
+  margin-right: 10px;
+  width: 60px;
+  border-radius: 10%;
+}
+.fi:hover {
+  width: 63px;
+  cursor: pointer;
+}
+nav {
+  margin-bottom: 20px;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.scroll {
+  overflow: scroll;
+  width: 320px;
+  height: 500px;
+}
+.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: azure;
+  width: 300px;
+  border-radius: 5%;
+  margin-bottom: 3px;
+}
+.show img {
+  width: 40px;
+  margin-right: 10px;
+}
