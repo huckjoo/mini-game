@@ -32,13 +32,17 @@ header {
   display: flex;
   justify-content: center;
 }
-.fi {
+.btn {
   margin-right: 10px;
   width: 60px;
   border-radius: 10%;
 }
-.fi:hover {
-  width: 63px;
+.btn:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.logo:hover {
+  transform: scale(1.1);
   cursor: pointer;
 }
 nav {
@@ -51,7 +55,7 @@ main {
 }
 .scroll {
   overflow: scroll;
-  width: 320px;
+  width: 570px;
   height: 500px;
 }
 .show {
@@ -59,9 +63,10 @@ main {
   justify-content: center;
   align-items: center;
   background-color: azure;
-  width: 300px;
-  border-radius: 5%;
-  margin-bottom: 3px;
+  width: 500px;
+  height: 50px;
+  border-radius: 7%;
+  margin-bottom: 5px;
 }
 .show img {
   width: 40px;
