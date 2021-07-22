@@ -1,74 +1,77 @@
+:root {
+  /* color */
+  --color-black: #3f454d;
+  --color-white: #ffffff;
+  --color-blue: #3b88c3;
+  --color-yellow: #fbbe28;
+  --color-pink: #fd7f84;
+  --color-light-grey: #dfdfdf;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #373c45;
+  background-color: var(--color-black);
 }
 header {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 .logo {
-  width: 130px;
+  width: 120px;
 }
-.filter {
+.logo :hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.btn {
+  background-color: transparent;
+  border: none;
+}
+.buttons :hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.buttons {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.filter__blue {
-  padding: 10px;
-  background-color: #54aeef;
-  display: flex;
-  justify-content: center;
-}
-.filter__yellow {
-  padding: 10px;
-  background-color: yellow;
-  display: flex;
-  justify-content: center;
-}
-.filter__pink {
-  padding: 10px;
-  background-color: pink;
-  display: flex;
-  justify-content: center;
-}
-.btn {
-  margin-right: 10px;
+.colorBtn {
+  border: 1px solid black;
+  height: 40px;
   width: 60px;
-  border-radius: 10%;
+  margin-right: 7px;
+  font-size: 16px;
 }
-.btn:hover {
-  transform: scale(1.1);
-  cursor: pointer;
+.blue {
+  background-color: var(--color-blue);
 }
-.logo:hover {
-  transform: scale(1.1);
-  cursor: pointer;
+.yellow {
+  background-color: var(--color-yellow);
 }
-nav {
-  margin-bottom: 20px;
+.pink {
+  background-color: var(--color-pink);
+}
+.btn__img {
+  width: 70px;
 }
 main {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
 }
-.scroll {
-  overflow: scroll;
-  width: 570px;
-  height: 500px;
+.item__img {
+  width: 50px;
+  margin-right: 10px;
 }
-.show {
+.item {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: azure;
-  width: 500px;
-  height: 50px;
-  border-radius: 7%;
+  width: 300px;
+  background-color: var(--color-light-grey);
   margin-bottom: 5px;
-}
-.show img {
-  width: 40px;
-  margin-right: 10px;
 }

@@ -1,48 +1,45 @@
 "use strict";
 
 function loadItems(){
-    return fetch("data/data.json")
+    return fetch('data/data.json')
     .then(response => response.json())
-    .then(json => json.items)
-}
-
-function displayItems(items){
-    const container = document.querySelector(".items")
-    container.innerHTML = items.map(item => controlHTML(item)).join('') 
+    .then(json=>json.items)
 }
 
 function controlHTML(items){
     return `
-    <li class="show">
-        <img src=${items.image}>
-        <span>${items.gender}, ${items.size}</span>
-    </li>
-  `
+    <li class="item">
+          <img class="item__img" src=${items.image} />
+          <span class="item__description">${items.gender}, ${items.size}</span>
+        </li>
+    `
 }
 
-function onButtonClick(event, items){
-    const key = event.target.dataset.key
-    const value = event.target.dataset.value
+function showItems(items){
+    const container = document.querySelector(".items");
+    container.innerHTML = items.map(item=>controlHTML(item)).join('');
+}
 
-    if (key === undefined){
+function filterItems(items){
+    const buttons = document.querySelector(".wholeBtns");
+    buttons.addEventListener("click",event=>filterItem(event,items));
+}
+function filterItem(event,items){
+    const key = event.target.dataset.key;
+    const value = event.target.dataset.value;
+    if (key === undefined || value === undefined){
         return
     }
-    displayItems(items.filter(item=>item[key]===value))
+    if (key === 'logo'){
+        console.log('key');
+        showItems(items);
+        return
+    }
+    const filtered = items.filter(item => item[key]===value);
+    showItems(filtered);
 }
-
-function setEventListeners(items){
-    const logo = document.querySelector('.logo')
-    const buttons = document.querySelector('.buttons')
-    logo.addEventListener("click",() => displayItems(items));
-    buttons.addEventListener("click", event => onButtonClick(event,items))
-}
-
 loadItems()
 .then(items=>{
-    displayItems(items)
-    setEventListeners(items)
+    showItems(items)
+    filterItems(items)
 })
-
-
-
-
